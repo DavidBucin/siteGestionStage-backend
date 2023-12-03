@@ -1,5 +1,5 @@
-const { Employeur } = require("../models/employeur"); 
-const { Etudiant } = require("../models/etudiant"); 
+const Etudiant = require("../models/etudiant");
+const Employeur = require("../models/employeur");
 
 const checkAccount = async (req, res) => {
   const { courriel, role } = req.body;
