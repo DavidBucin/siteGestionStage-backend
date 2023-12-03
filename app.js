@@ -11,6 +11,7 @@ const app = express();
 const stagesRoutes = require("./routes/stages-routes");
 const etudiantsRoutes = require("./routes/etudiants-routes");
 const employeursRoutes = require("./routes/employeurs-routes");
+const authRoutes = require("./routes/auth-routes")
 const HttpErreur = require("./models/http-erreur");
 
 
@@ -27,6 +28,7 @@ app.use((requete, reponse, next) =>{
 app.use("/api/stages", stagesRoutes);
 app.use("/api/etudiants", etudiantsRoutes);
 app.use("/api/employeurs", employeursRoutes);
+app.use("/api/auth", authRoutes);
 
 app.use((requete, reponse, next) => {
   return next(new HttpErreur("Route non trouvée", 404));
